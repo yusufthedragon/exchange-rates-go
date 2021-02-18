@@ -5,8 +5,8 @@ import "github.com/go-playground/validator/v10"
 // The validator instance.
 var validation = validator.New()
 
-// GetCurrency function gets the currency value from API.
-func GetCurrency(params *RequestParameter) (float64, error) {
+// ConvertCurrency function gets the currency value from API.
+func ConvertCurrency(params *RequestParameter) (float64, error) {
 	validation.RegisterValidation("validCurrency", ValidateCurrency)
 	var errValidation = validation.Struct(params)
 

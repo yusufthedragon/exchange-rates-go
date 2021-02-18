@@ -7,7 +7,7 @@ import (
 )
 
 func TestUSDToIDR(t *testing.T) {
-	currency, err := GetCurrency(&RequestParameter{
+	currency, err := ConvertCurrency(&RequestParameter{
 		From:  "USD",
 		To:    "IDR",
 		Value: 2,
@@ -21,7 +21,7 @@ func TestUSDToIDR(t *testing.T) {
 }
 
 func TestUSDToIDRLastYear(t *testing.T) {
-	currency, err := GetCurrency(&RequestParameter{
+	currency, err := ConvertCurrency(&RequestParameter{
 		Date:  time.Now().AddDate(-1, 0, 0),
 		From:  "USD",
 		To:    "IDR",
@@ -36,7 +36,7 @@ func TestUSDToIDRLastYear(t *testing.T) {
 }
 
 func TestIDRToUSD(t *testing.T) {
-	currency, err := GetCurrency(&RequestParameter{
+	currency, err := ConvertCurrency(&RequestParameter{
 		From:  "IDR",
 		To:    "USD",
 		Value: 160000,
@@ -50,7 +50,7 @@ func TestIDRToUSD(t *testing.T) {
 }
 
 func TestIDRToUSDLastYear(t *testing.T) {
-	currency, err := GetCurrency(&RequestParameter{
+	currency, err := ConvertCurrency(&RequestParameter{
 		Date:  time.Now().AddDate(-1, 0, 0),
 		From:  "IDR",
 		To:    "USD",
